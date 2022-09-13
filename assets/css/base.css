@@ -1,0 +1,391 @@
+:root{
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --primary-color: #ee4d2d;
+    --border-color: #DBDBDB;
+
+    --header-height: 120px;
+    --navbar-height: 38px;
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+    --header-sort-bar-height: 46px;
+}
+/* Grid systems */
+.col-4
+{
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+    margin: 0 8px;
+}
+.pd-0
+{
+    padding: 0 !important;
+}
+.padding-top
+{
+    padding-top: 12px;
+}
+
+*{
+    /* HACK */
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%;
+    line-height: 1.6rem ;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 1.6rem;
+}
+.app__container
+{
+    background-color: #f5f5f5;
+}
+.col-background
+{
+    background-color: #fff;
+}
+/* Responsive */
+.grid__full-width{
+    width: 100%;
+}
+
+.gird__row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Row and Column */
+/* Grid system for main column on home */
+.row-large
+{
+    display: flex;
+    flex-direction: wrap;
+    height: 100%;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.col
+{
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.col-2-4
+{
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+.l-col-2
+{
+    flex: 0 0 16.66667%;
+    max-width: 16.66667%;
+}
+.l-col-4
+{
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+}
+
+.l-col-8
+{
+    flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+}
+
+.l-col-10
+{
+    flex: 0 0 83.33333%;
+    max-width: 83.33333%;
+}
+
+/* Grid system for extra column on home */
+.row-medium
+{
+    display: flex;
+    flex-direction: wrap;
+    margin-left: -4px;
+    margin-right: -4px;
+}
+.row-medium--reverse
+{
+    flex-direction: row-reverse;
+}
+.m-col
+{
+    padding-left: 4px;
+    padding-right: 4px;
+}
+.col-20-percent
+{
+    flex: 0 0 20%;
+    max-width: 20%;
+    margin-top: 10px;
+}
+
+.mar-4
+{
+    margin: 0 4.5px;
+}
+.mar-minus-3
+{
+    margin-right: -3px;
+}
+@keyframes growth
+{
+    from{
+        opacity: 0;
+        transform: scale(var(--growth-from));
+    }
+    to{
+        opacity: 1;
+        transform: scale(var(--growth-to));
+    }
+}
+
+@keyframes FadeIn
+{
+    from{
+        opacity: 0;
+        transform: translateY(-15%);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes FadeAway
+{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+.nav-bar__list-items.nav-bar__list-items-register,
+.nav-bar__list-items.nav-bar__list-items-login
+{
+    display: none;
+}
+
+/* Modal  */
+
+.modal__body
+{
+    --growth-from: 0.7;
+    --growth-to: 1;
+    animation: growth linear 0.1s;
+}
+
+.modal
+{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+}
+
+.js-modal-register
+{
+    display: none;
+}
+
+.js-modal-login
+{
+    display: none;
+}
+
+.hidden
+{
+    display: none !important;
+    animation: FadeAway linear 0.2s;
+}
+
+.open
+{
+    display: block !important;
+}
+
+.modal__overlay
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0 , 0 , 0 ,0.4);
+}
+
+.modal__body
+{
+    margin: auto;
+    z-index: 2;
+}
+/* Button - Style */
+
+.btn
+{
+    min-width: 90px;
+    height: 34px;
+    border: 0;
+    text-decoration: none;
+    border-radius: 2px;
+    font-size: 1.4rem;
+    padding: 0 12px;
+    cursor: pointer;
+    color: var(--text-color);
+    background-color: var(--white-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 2px #eee;
+}
+
+.btn.btn--normal:hover
+{
+    background-color: rgba(0,0,0, 0.05);
+}
+
+.btn.btn--primary
+{
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.btn.btn--primary:hover
+{
+    background-color: #f46043;
+}
+
+.btn--size-s
+{
+    height: 32px;
+    font-size: 1.4rem;
+    padding: 0;
+    padding-left: 8px;
+}
+
+.btn.btn--disable
+{
+    cursor: default;
+    color: #949494;
+    background-color: #c3c3c3;
+}
+
+.app__container{
+    padding: 30px 0;
+}
+
+.pagination-primary-btn
+{
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+.pagination-primary-btn > a
+{
+    color: var(--white-color);
+}
+.pagination-primary-btn:hover
+{
+    opacity: 0.9;
+}
+.home-product-pagination
+{
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+.footer-vn-visa-png {
+    background-size: 1463.6363636363637% 983.3333333333334%;
+    background-position: 75.86666666666666% 6.289308176100629%;
+}
+.footer-vn-mastercard-png {
+    background-size: 1463.6363636363637% 610.3448275862069%;
+    background-position: 51.2% 68.91891891891892%;
+}
+.footer-vn-jcb-png {
+    background-size: 1463.6363636363637% 769.5652173913044%;
+    background-position: 51.2% 38.311688311688314%;
+}
+.footer-vn-amex-png {
+    background-size: 1610% 804.5454545454545%;
+    background-position: 1.3245033112582782% 6.451612903225806%;
+}
+.footer-vn-vn_cod_footer-png {
+    background-size: 1610% 610.3448275862069%;
+    background-position: 80.39735099337749% 32.432432432432435%;
+}
+.footer-vn-vn_installment_footer-png {
+    background-size: 1463.6363636363637% 610.3448275862069%;
+    background-position: 80.93333333333334% 65.54054054054055%;
+}
+.footer-vn-shopeepay-png {
+    background-size: 805% 931.578947368421%;
+    background-position: 63.687943262411345% 6.329113924050633%;
+}
+.footer-vn-shopee-express-png {
+    background-size: 725.2252252252252% 983.3333333333334%;
+    background-position: 16.42651296829971% 82.38993710691824%;
+}
+.footer-vn-ghtk-png {
+    background-size: 1463.6363636363637% 983.3333333333334%;
+    background-position: 34.266666666666666% 51.57232704402516%;
+}
+.footer-vn-ghn-png {
+    background-size: 1463.6363636363637% 610.3448275862069%;
+    background-position: 24.266666666666666% 55.4054054054054%;
+}
+.footer-vn-viettel_post-png {
+    background-size: 628.90625% 138.28125%;
+    background-position: 67.79911373707533% 100%;
+}
+.footer-vn-vnpost-png {
+    background-size: 1463.6363636363637% 655.5555555555555%;
+    background-position: 100% 6.666666666666667%;
+}
+.footer-vn-vn_jnt_footer-png {
+    background-size: 1463.6363636363637% 1106.25%;
+    background-position: 85.86666666666666% 6.211180124223603%;
+}
+.footer-vn-grab_express-png {
+    background-size: 600.7462686567164% 610.3448275862069%;
+    background-position: 45.45454545454545% 6.756756756756757%;
+}
+.footer-vn-ninja-van-png {
+    background-size: 1341.6666666666667% 680.7692307692307%;
+    background-position: 34.49664429530201% 79.47019867549669%;
+}
+.footer-vn-best-express-png {
+    background-size: 865.5913978494624% 340.38461538461536%;
+    background-position: 26.96629213483146% 8%;
+}
+.footer-vn-be-delivery-png {
+    background-size: 1118.0555555555557% 245.83333333333334%;
+    background-position: 12.278308321964529% 9.523809523809524%;
+}
+
+.footer__contact
+{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.row-large__footer
+{
+    height: auto;
+    padding: 30px 0 40px;
+}
+.footer-main-midle
+{
+    display: flex;
+    justify-content: center;
+}
+.footer-main-midle > a
+{
+    margin: 0 20px;
+}
